@@ -18,3 +18,8 @@ def inspecter_sockets():
 
 if __name__ == "__main__":
     inspecter_sockets()
+
+# Réponse : Oui, les fileno() sont nécessairement différents.
+# L'OS alloue un entier unique par ressource ouverte.
+# Deux sockets ouverts simultanément ne peuvent pas partager le même descripteur.
+# Note : AF_UNIX non testé car je suis sous Windows.
