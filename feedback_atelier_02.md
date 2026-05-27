@@ -1,5 +1,14 @@
 # Feedback — Atelier 2 (Daniel BEN HAMOU)
 
+> **Note du formateur (mise à jour 2026-05-27)** : la présence ou
+> l'absence de `AF_UNIX` n'est **plus prise en compte** dans la
+> notation. Plusieurs étudiants travaillent sous Windows où cette
+> famille de sockets n'est pas (ou peu) supportée. Les remarques
+> ci-dessous qui critiquaient l'absence ou le remplacement de
+> `AF_UNIX` (par `AF_INET6` notamment) sont à considérer comme
+> **caduques**.
+
+
 ## Respect de la consigne
 
 Tu as deux sockets sur trois (`AF_INET/STREAM`, `AF_INET/DGRAM`) ;
