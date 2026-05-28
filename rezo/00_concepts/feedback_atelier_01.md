@@ -2,6 +2,42 @@
 
 ## Respect de la consigne
 
+Critères attendus : `getaddrinfo` + déduplication + format
+`IPv4 : <adresse>` par ligne + comptage cohérent.
+
+Constat sur ton code :
+- ✓ `getaddrinfo` appelé une seule fois, résultat réutilisé pour
+  IPv4 et IPv6.
+- ✓ **Déduplication intégrée** via un set en compréhension :
+  `sorted({s[0] for f, *_, s in enregistrements if ...})`. C'est
+  exactement la correction attendue.
+- ✓ Format de sortie ajusté : une ligne `IPv4 : <adresse>` par
+  adresse, sans indentation.
+- ✓ Total cohérent : `len(ipv4) + len(ipv6)` calculé après
+  déduplication.
+- ✓ Argparse plutôt que `sys.argv[1]` : l'aide est gratuite, et un
+  appel sans argument produit un message clair au lieu d'un
+  `IndexError`.
+
+## Côté Python
+
+- Dépaquetage idiomatique `f, *_, s` pour récupérer famille et
+  sockaddr en ignorant les champs intermédiaires. Très propre.
+- Pas de gestion de `socket.gaierror` : un domaine inexistant
+  produira encore une trace brute. C'est acceptable mais reste le
+  dernier point d'amélioration possible.
+
+---
+*Évalué sur le commit `092048c` (fichier `rezo/00_concepts/atelier_01_Daniel_BENHAMOU.py`).*
+
+---
+
+## Évaluation précédente (obsolète, commit `14b3307`)
+
+# Feedback — Atelier 1 (Daniel BEN HAMOU)
+
+## Respect de la consigne
+
 L'argument CLI est lu, IPv4 et IPv6 sont séparées, le total est
 imprimé. Le contrat de base est rempli.
 
