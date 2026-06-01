@@ -1,3 +1,29 @@
+# Feedback — S01/A2 (Phrase formatée, BEN HAMOU Daniel)
+
+> **Ré-évaluation à jour** : ajout du `try/except ValueError` sur la conversion de l'âge, demandé par la consigne.
+
+## Respect de la consigne
+
+Critères attendus : phrase formatée à partir d'un prénom et d'un âge ; gestion `ValueError` sur l'âge ; calcul de l'année de naissance via `date.today().year`.
+
+Constat sur ton code :
+- ✓ Lecture du prénom et de l'âge via `input()`.
+- ✓ **`try/except ValueError`** autour de `int(input(...))` avec message sur `sys.stderr` et `sys.exit(1)`. Le manquement précédent est corrigé.
+- ✓ Calcul `date.today().year - age` plutôt qu'une année codée en dur.
+- ✓ Phrase formatée avec f-string : « Bonjour, X, tu as N ans, donc tu es né(e) vers ANNEE. »
+- ✓ Structure propre : `main()` + garde `if __name__ == "__main__":`.
+
+## Côté Python
+
+- Approche stderr + exit(1) bien choisie pour signaler l'erreur à un éventuel pipeline shell.
+
+---
+*Évalué sur le commit `6cb7630` (fichier `sys/01_print_et_input/atelier_02_Daniel_BENHAMOU.py`).*
+
+---
+
+## Évaluation précédente (obsolète, commit `092048c`)
+
 # Feedback — Atelier 2 (Daniel BEN HAMOU)
 
 ## Respect de la consigne
@@ -20,6 +46,3 @@ Constat sur ton code :
 
 - Garde `if __name__ == "__main__":` + fonction `main()` :
   structure propre.
-
----
-*Évalué sur le commit `092048c` (fichier `sys/01_print_et_input/atelier_02_Daniel_BENHAMOU.py`).*
