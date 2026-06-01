@@ -1,4 +1,5 @@
 import argparse
+import operator
 import sys
 
 
@@ -13,13 +14,14 @@ def main():
         print("Erreur : division par zéro", file=sys.stderr)
         sys.exit(1)
 
-    resultats = {
-        "+": args.a + args.b,
-        "-": args.a - args.b,
-        "*": args.a * args.b,
-        "/": args.a / args.b,
+    operations = {
+        "+": operator.add,
+        "-": operator.sub,
+        "*": operator.mul,
+        "/": operator.truediv,
     }
-    print(f"{args.a} {args.op} {args.b} = {resultats[args.op]}")
+    resultat = operations[args.op](args.a, args.b)
+    print(f"{args.a} {args.op} {args.b} = {resultat}")
 
 
 if __name__ == "__main__":

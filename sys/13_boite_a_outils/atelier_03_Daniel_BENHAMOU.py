@@ -1,13 +1,13 @@
 import secrets
 import tempfile
-import os
+from pathlib import Path
 
 
 def main():
     token = secrets.token_urlsafe(32)
 
     with tempfile.TemporaryDirectory() as tmpdir:
-        chemin_env = os.path.join(tmpdir, ".env")
+        chemin_env = Path(tmpdir) / ".env"
 
         with open(chemin_env, "w", encoding="utf-8") as f:
             f.write(f"TOKEN={token}\n")

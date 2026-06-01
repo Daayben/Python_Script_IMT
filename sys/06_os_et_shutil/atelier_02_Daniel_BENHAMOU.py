@@ -8,7 +8,7 @@ def backup(source: Path) -> Path:
     horodatage = datetime.now().strftime("%Y%m%d_%H%M%S")
     destination = source.parent / f"backup_{horodatage}"
     shutil.copytree(source, destination)
-    nb_fichiers = sum(1 for _ in destination.rglob("*") if _.is_file())
+    nb_fichiers = sum(1 for p in destination.rglob("*") if p.is_file())
     print(f"Backup créé : {destination}")
     print(f"Fichiers copiés : {nb_fichiers}")
     return destination
