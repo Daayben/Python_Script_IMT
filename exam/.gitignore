@@ -1,0 +1,19 @@
+# Base de données (recréée au démarrage)
+domaines.db
+*.db
+
+# Caches Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Environnement
+.env
+venv/
+.venv/
+
+# Notes personnelles / sujet (non livrables)
+consignes.md
+memoires.md
+plan.md
+EXAMEN_brouillon.pdf

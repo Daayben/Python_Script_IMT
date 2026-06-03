@@ -1,0 +1,5 @@
+pydantic[email]
+sqlalchemy
+python-dotenv
+email-validator
+pytest
